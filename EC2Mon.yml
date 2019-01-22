@@ -1,0 +1,10 @@
+- hosts: EC2Mon
+  gather_facts: yes
+  name: Deploy and configure bits for ec2 CloudWatch monitoring
+  become: yes
+
+  vars_files:
+    - vars/vars.yml
+
+  roles:
+    - { role: EC2Mon, tags: EC2Mon }
